@@ -1,7 +1,7 @@
 # Created by Ricardo Quintela
 
 from pygame import Surface, Rect, draw
-from guiElements.inputs.button import Button
+from guiElements.src.inputs.button import Button
 
 class ColorPicker:
     def __init__(self, color: tuple, pos: tuple = (0,0)):

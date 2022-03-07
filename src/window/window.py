@@ -1,6 +1,6 @@
 # Created by Ricardo Quintela
 
-from pygame import display, time, RESIZABLE
+from pygame import display, time, RESIZABLE, Surface
 
 class Window:
     def __init__(self,size: tuple, fps: int, title: str = "App") -> None:
@@ -46,6 +46,18 @@ class Window:
         self.title = title
         display.set_caption(title)
 
+
+    def blit(self, surface: Surface, pos:tuple):
+        """Draws the surface on the canvas
+
+        Parameters
+        ----------
+        surface : Surface
+            the surface to draw on the canvas
+        pos : tuple
+            the position where to draw the surface
+        """
+        self.canvas.blit(surface, pos)
 
 
     def tick(self) -> None:

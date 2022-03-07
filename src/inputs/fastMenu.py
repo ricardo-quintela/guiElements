@@ -1,7 +1,7 @@
 # Created by Ricardo Quintela
 
 from pygame import Surface
-from guiElements.inputs.button import Button
+from guiElements.src.inputs.button import Button
 
 class FastMenu:
     def __init__(self, options: list):
@@ -16,6 +16,8 @@ class FastMenu:
         self.dimensions = (0,0)
 
         self.pos = (0,0)
+
+        self.isActive = True
 
 
         self.setDimensions()
@@ -58,6 +60,24 @@ class FastMenu:
             button.blit(self.surface)
 
 
+    def activate(self, pos: tuple):
+        """Activates the menu
+
+        Parameters
+        ----------
+        pos : tuple
+            the new position of the fast menu
+        """
+        self.isActive = True
+        self.pos = pos
+
+
+    def deactivate(self):
+        """Deactivates the menu
+        """
+        self.isActive = False
+
+
     def getClick(self, index: int):
         """
         Access the click attribute of a button on the menu\n
@@ -68,18 +88,18 @@ class FastMenu:
         return self.options[index].getClick()
 
 
-    def blit(self, canvas: Surface, pos: tuple):
+    def blit(self, canvas: Surface):
         """
         Draws the surface on the given canvas\n
         Updates the menu pos attribute\n
 
         Args:
             canvas: the surface on which to draw the menu
-            pos: the position of the canvas on which to draw the menu
         """
-        self.pos = pos
+        if not self.isActive:
+            return
 
-        canvas.blit(self.surface, pos)
+        canvas.blit(self.surface, self.pos)
 
 
     def addOption(self, option: Button):
@@ -117,6 +137,10 @@ class FastMenu:
             mousePos: the position of the canvas where to draw the menu
             click: the button of the mouse that was clicked
         """
+
+        if not self.isActive:
+            return
+
         #itereate through the buttons array and check for hover and clicks in each one
         mousePosition = (mousePos[0] - self.pos[0], mousePos[1] - self.pos[1])
 

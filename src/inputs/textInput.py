@@ -1,7 +1,7 @@
 # Created by Ricardo Quintela
 
 from pygame import Rect, Surface, time, draw
-from guiElements.inputs.label import Label
+from guiElements.src.inputs.label import Label
 
 class TextInput:
     def __init__(self, pos: tuple, color: tuple, name:str = "", textColor: tuple = (255,255,255)):
@@ -12,6 +12,7 @@ class TextInput:
             pos: the position of the input on the screen
             color: the color of the input box
             textColor: the color of the written text
+            name: the text to start the text input with
         """
         self.pos = pos
         self.color = color
@@ -20,6 +21,9 @@ class TextInput:
 
         #in case the user wants to distinguish
         self.index = 0
+
+        # activate or deactivate inputs
+        self.isActive = True
 
 
         self.text = ""
@@ -41,6 +45,23 @@ class TextInput:
 
         #the time since last time update
         self.lastTime = 0
+
+
+    def activate(self, pos:tuple):
+        """Activate text input
+
+        Args:
+            pos: the new postition of the text input
+        """
+        self.pos = pos
+
+        self.isActive = True
+
+    
+    def deactivate(self):
+        """Deactivate text input
+        """
+        self.isActive = False
 
 
     def setIndex(self, index: int):
@@ -100,6 +121,9 @@ class TextInput:
             char: the character or string to add to the text
             backspace: whether backspace is pressed or not
         """
+        if not self.isActive:
+            return
+
         self.text += char
 
         if backspace:
@@ -136,7 +160,7 @@ class TextInput:
         Access the text in the label\n
 
         Returns:
-            the text is its length is > than 0, None otherwise
+            the text if its length is > than 0, None otherwise
         """
         return self.text if len(self.text) != 0 else None
 
@@ -147,6 +171,9 @@ class TextInput:
         Args:
             canvas: the surface where the label with be drawn
         """
+
+        if not self.isActive:
+            return
 
         now = time.get_ticks()
 

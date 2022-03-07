@@ -1,7 +1,7 @@
 # Created by Ricardo Quintela
 
 from pygame import Rect, Surface
-from guiElements.inputs.label import Label
+from guiElements.src.inputs.label import Label
 
 
 class Button:
