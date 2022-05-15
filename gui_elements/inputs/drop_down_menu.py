@@ -3,7 +3,7 @@
 from pygame import Surface
 from .button import Button
 
-class FastMenu:
+class DropDownMenu:
     def __init__(self, options: list):
         """
         Constructor of the class FastMenu\n
