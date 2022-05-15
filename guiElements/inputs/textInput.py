@@ -1,7 +1,7 @@
 # Created by Ricardo Quintela
 
 from pygame import Rect, Surface, time, draw
-from guiElements.src.inputs.label import Label
+from .label import Label
 
 class TextInput:
     def __init__(self, pos: tuple, color: tuple, name:str = "", textColor: tuple = (255,255,255)):

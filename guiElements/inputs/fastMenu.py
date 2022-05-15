@@ -1,7 +1,7 @@
 # Created by Ricardo Quintela
 
 from pygame import Surface
-from guiElements.src.inputs.button import Button
+from .button import Button
 
 class FastMenu:
     def __init__(self, options: list):

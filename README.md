@@ -2,13 +2,14 @@
 
 ## Make pygame apps with custom inputs easier
 
-This package provides useful inputs for pygame interfaces such as apps or games.  
+This module provides useful inputs for pygame interfaces such as apps or games.  
 
-The window module can be used to create and manage a window with ease.  
+The window package can be used to create and manage a window with ease.  
 
-The inputs module can be used to create graphical inputs on the window  
+The inputs package can be used to create graphical inputs on the window  
 
-## Available inputs:  
+# Inputs package
+
 * Button - A standart button input that can be associated with a function/method to execute instructions  
 * "Fast Menu" - Right click menu that can contain a list of buttons  
 * Text input - A text box that the user can write on  
@@ -16,7 +17,7 @@ The inputs module can be used to create graphical inputs on the window
 * Label - A place to display text  
 (all these inputs have ways to change their behaviour during code execution)
 
-## Window Elements
+# Window package
 
 To create a working window, the user need to create an instance of the ```Window``` class. To controll its events one must instance the ```WindowEvent``` class.  
 The user may then use the ```eventsCheck``` method to check for window events.  
@@ -41,7 +42,7 @@ while events.getEvent("windowState"):
     root.tick()
 
     # fill the canvas with white
-    root.fill((255,255,255))
+    root.fill("white")
 
     # update the window
     root.update()
