@@ -4,20 +4,21 @@ from pygame import Surface, Rect, draw
 from .button import Button
 
 class ColorPicker:
-    def __init__(self, color: tuple, pos: tuple = (0,0)):
+    def __init__(self, color: tuple, pos: tuple = (0,0), size: tuple = (404, 60)):
         """
         The constructor of the class ColorPicker\n
 
         Args:
             color: the color of the background of the color picker
             pos: the position of the color picker
+            size: the size of the color picker
         """
         # default attributes
         self.color = color
         self.pos = pos
 
         #new attributes
-        self.size = (404, 60)
+        self.size = size
         self.surface = Surface(self.size)
         self.hitbox = Rect(self.pos[0] + 10, self.pos[1] + 5, 384, 20)
 

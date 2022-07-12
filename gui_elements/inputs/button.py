@@ -9,11 +9,11 @@ class Button:
                  textSize: int = 15, textColor:tuple = (255,255,255), index: int = 0, active: bool = True):
         """
         Constructor of the class Button\n
-        A button is a window object that can be clicked with the mouse\n
+        A button is a window object that can be clicked with the mouse\n\n
 
         The object can be associated with a function so that when the user clicks, the function is called\n
         The event attribute can be used to store a function to later execute. The function can also
-        be associated with the setEvent method\n
+        be associated with the setEvent method\n\n
 
         To add args to the stored function a anonymous function can be used (lambda)
 
