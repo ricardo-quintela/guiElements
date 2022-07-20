@@ -31,6 +31,7 @@ class Label:
         """
         self.text = text if len(text) != 0 else "     " #label gets some space even is the text is inexistent
         self.surface = font.SysFont("Arial Black", self.fontSize).render("%s" % (text), False, textColor, self.fontSize)
+        self.surface.set_colorkey("black")
         self.size = self.surface.get_size()
 
     def blit(self, canvas: Surface, pos: tuple):

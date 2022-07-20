@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: guiElements
+Version: 0.0.6
+Summary: Make pygame apps easier
+Home-page: https://github.com/ricardo-quintela/guiElements
+Author: ricardoquinteladev
+Author-email: 
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+## Make pygame apps with custom inputs easier
+
+This module provides useful inputs for pygame interfaces such as apps or games.  
+
+The window package can be used to create and manage a window with ease.  
+
+The inputs package can be used to create graphical inputs on the window  
+
+
+# How to install
+
+```pip install guiElements```
+
+[Pypi](https://pypi.org/project/guiElements/)
+
+# Documentation
+
+[Documentation](https://github.com/ricardo-quintela/guiElements/wiki)
